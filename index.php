@@ -16,17 +16,13 @@ require "comun.php";
 	// Empezamos a generar código html mediante php
 	HTMLinicio();
 
-	
-	
-	// Vamos a ver que contenido tenemos que mostrar según lo seleccionado
-	// en el navegador, aunque primero tenemos que comprobar si
-	// se ha solicitado alguna página en el navegador o no
+
+	// Si no se ha solicitado ninguna página (se entra por
+	// primera vez) mostramos el contenido de la página inicio
 	if(!isset($_GET["p"]))
 		$_GET['p'] = 'Inicio';
-	else if($_GET["p"] < 0 || $_GET["p"] > 3)
-		$_GET['p'] = 'Inicio';
-	
-	
+
+
 	// Si $_GET["p"] == "Inicio" mostramos el header (imagen)
 	if($_GET["p"] == "Inicio")
 		HTMLheaderInicial();
@@ -57,34 +53,13 @@ require "comun.php";
 			include "inicio.html";
 			break;
 		
-		// En el caso de Biografía mostramos la página de la biografía
-		// del grupo
-		case 'Ver Articulos':
-			include "Articulos.php";
+		// En el caso de Algoritmo de Euclides mostramos la página
+		// correspondiente
+		case 'Algoritmo de Euclides':
+			include "AlgoritmoEuclides.php";
 			break;
 			
-		// Para este caso tenemos que ver si se ha seleccionado algún
-		// disco en concreto
-		case 'Evaluar':
-			include "Evaluar.php";
-			break;
-		
-		// Si nos piden desde la página "evaluar" la opción 
-		// escrito incluimos el archivo php correspondiente
-		case 'EvaluarEscrito':
-			include "EvaluarEscrito.php";
-			break;
-
-		// Si nos piden desde la página "evaluar" la opción voz
-		// incluimos el archivo php correspondiente
-		case 'EvaluarVoz':
-			include "EvaluarVoz.php";
-			break;
-
-		// Vemos si el visitante quiere hacer Login
-		case 'Login':
-			include "Login.php";
-			break;
+	
 
 	}
 

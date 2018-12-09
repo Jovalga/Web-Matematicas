@@ -16,14 +16,16 @@ echo <<< HTML
 		<meta name="author" content="Jorge Valenzuela García">
 		<title>Algoritmos matemáticos</title>
 		<link href="Imagenes/icon.png" rel="shortcut icon" type="image/x-icon">	
-		<link rel="stylesheet" href="estilo.css">
-</head>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
 
 	<body>
 
 HTML;
 }
  
+
+
 
 function HTMLfin(){
 echo <<< HTML
@@ -35,6 +37,8 @@ HTML;
 }
 
 
+
+
 function HTMLheaderInicial(){
 echo <<< HTML
 
@@ -44,20 +48,7 @@ echo <<< HTML
 HTML;
 }
 
-/* Cambiar Logout en header por logout en nav
-function HTMLheaderLogout(){
-echo <<< HTML
 
-		<header id="Cabecera">
-		<h1 id="TituloHeader">Destino Final: Juez</h1>
-			<div class="Logeo" id="Logeo">
-				<a href="index.php?p=Login&Logout=Logout">Logout</a>
-			</div>
-		</header>
-
-HTML;
-}
-*/
 
 
 function HTMLnav($activo){
@@ -65,93 +56,31 @@ function HTMLnav($activo){
 echo <<< HTML
 	
 	<nav id="Navegador">
-		<div class="IndicesNav">
-			<ul>
+		<div class="w3-bar w3-blue">
 HTML;
 
-	$items = ["Inicio", "Ver Articulos", "Evaluar"];
-
-	foreach ($items as $k => $v){
-	/*if($v == "Evaluar"){
-		echo 
-		"<div class='dropdown'>
-			<a href='index.php?p=".($v)."'>
-			<li".($v==$activo?" class='activo'":"").">".($v)."</li></a>";
-		echo	
-			"<div class='dropdown-content'>
-				<a href='index.php?p=EvaluarEscrito'>
-				<a href='index.php?p=EvaluarVoz'>
-			</div>
-		</div>";
-
-	}
-	else*/
-		echo 
-			 "<a href='index.php?p=".($v)."'>
-			 <li".($v==$activo?" class='activo'":"").">".($v)."</li></a>";
-	}
-echo <<< HTML
-
-			</ul>
-		</div>
-		<div class="Logeo">
-			<a href="index.php?p=Login">Login</a>
-		</div>
-	</nav>
-
-HTML;
-}
-
-
-
-function HTMLnavAdmin($activo){
-echo <<< HTML
-	
-	<nav id="Navegador">
-		<ul>
-HTML;
-
-	$items = [	"VerUsuarios", "EditarUsuarios", "CrearUsuario",
-				"AñadirBiografía","EditarBiografia",
-				"AñadirComponente", "EditarComponentes",
-				"AñadirDisco", "EditarDiscografía",
-				"CrearConcierto", "EditarConciertos",
-				"VerLog", "BBDD"];
+	$items = ["Inicio", "Algoritmo de Euclides"];
 
 	foreach ($items as $k => $v)
-		echo "<li".($v==$activo?" class='activo'":"").">".
-			 "<a href='index.php?p=".($v)."'>".$v."</a></li>";
-
+		echo 
+			 "<a class='w3-bar-item w3-button w3-card' href='index.php?p=".($v)."'>".($v)."</a>";
 echo <<< HTML
 
-		</ul>
+		</div>
 	</nav>
 
 HTML;
 }
+
 
 
 
 function HTMLfooter(){
 echo <<< HTML
 
-	<footer id="Pie">
-		
-		<div class="FooterEnlaces">
-			<div class="enlace hvr-underline-from-left" id="urlOficial">
-				<a href="http://www.poderjudicial.es/cgpj/es/Servicios/Acceso-a-la-Carrera-Judicial--Jueces-y-Fiscales/Anuncios/">Visita la Web Oficial del Poder Judicial para ver los anuncios de las oposiciones</a>
-			</div>
-			
-			<div class="enlace hvr-underline-from-left" id="EnlaceBOE">
-				<a href="https://www.boe.es/diario_boe/">BOE</a>
-			</div>	
-			
-			<div class="enlace hvr-underline-from-left" id="Documentacion">
-				<a href="./Documentación.pdf">Documentación</a>
-			</div>
-		</div>
+	<footer class="w3-container w3-blue" id="Pie">
 
-		<div class="copyright" id="copy">
+		<div class="copyright w3-padding" id="copy">
 			&copy; 2018 por Jorge Valenzuela García. Todos los derechos reservados.
 		</div>
 			
