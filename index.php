@@ -56,7 +56,7 @@ require "comun.php";
 		// En el caso de Algoritmo de Euclides mostramos la página
 		// correspondiente
 		case 'Algoritmo de Euclides':
-			include "AlgoritmoEuclides.php";
+			include "AlgoritmoEuclides.html";
 			break;
 			
 	
